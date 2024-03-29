@@ -1,6 +1,6 @@
 These are the GameMaker files used to run my p4 warden last row sim here: https://gx.games/games/6f00u8/last-row-sim/
 
-Disclaimer: the code did not go through a clean-up process before uploading this, so will be pretty messy and not particularly optimized. 
+Disclaimer: the code did not go through a clean-up process before uploading this, and this was my first Gamemaker project... so it will be pretty messy and not particularly optimized. 
 
 I've uploaded these files as an open-source alternative to the downlaodable .exe file in my other repository, so users can download and run the program locally securely.
 
