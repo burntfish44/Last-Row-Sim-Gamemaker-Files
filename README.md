@@ -4,7 +4,7 @@ Disclaimer: the code did not go through a clean-up process before uploading this
 
 I've uploaded these files as an open-source alternative to the downlaodable .exe file in my other repository, so users can download and run the program locally securely.
 
-To run the program locally using Gamemaker Studio 2 (the program used to create the sim) download GameMaker here: https://gamemaker.io/en/download and import the project. 
+To run the program locally using Gamemaker Studio 2 (the program used to create the sim) download the wardensp4 folder, download GameMaker here: https://gamemaker.io/en/download and just file>open the project. 
 For it to run on windows rather than in your browser when you click "play", check the upper right corner of GameMaker for the crosshair icon and make sure it's set to "Windows | GMS2 VM | Default | Default". 
 
 ## Some info on the code if you want to poke around
