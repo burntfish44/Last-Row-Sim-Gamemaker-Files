@@ -1,0 +1,46 @@
+===== NOTES:
+
+attack state - attack always interrupts true tile movement
+
+baba and boulders
+	- boulder hits on the 4th tick after the sound
+	- shadow appears on the 2nd tick
+	- ticks are sound > no shadow > small shadow > big shadow > bang
+	- boulder graphics
+		- falling rubble first tick
+		- falling boulder
+		- boulder breaking
+		- handling boulder shadow + lightning shadow on the same tile
+add croc and its attacks
+	- 1 - mouth full, 2 - pot appear, 3-4 - pot fly, 5 - pot break, proj flying, 6&7 - flying, 8 - explosion, 9 apply dmg
+	- seems ~66% to atk with previous
+	- 4 ticks per spit every time, 4 ticks until pop every time
+	- 4 ticks from pop to player hitsplat on 0 & 2 path (3 to player 1 to hitsplat), 3 ticks from pop to hitting player on 4-6 path
+	- it attacks as soon as it can not when the player is hit
+
+===== TODO:
+	
+add heal buttons
+	- keris and spec button?
+	
+UI : 
+	- options menu: set ambro doses, path levels for baba/zebak
+
+graphics:
+	- add a background? a basic dark grey one maybe?
+	- add more diagonal broken tiles to make it look better?
+	- add actual arrows instead of orbs, low prio
+
+nice to haves/later development:
+	- zebak path level/faster attacks
+	- add latancy option - low prio
+	- inventory screen/prayer screen switching for heals
+	- prayer point draining and pots
+	- loot you get if you win
+	- prayer points with brews, restores, bugs, keris?
+	- pausing with screenshot behind: https://www.youtube.com/watch?v=dNiLIX8jNOM - super low prio
+	- challenge mode - low prayer, would req getting 1 ticking working
+	- options for starting hp - 70ish, 99 base,116 brewed,125 ambrod
+	- new options screen popup from other option screen "invos" - then put path options and such here
+	- make a vid on the creation process? lol
+	
