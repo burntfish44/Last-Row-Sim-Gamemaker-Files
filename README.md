@@ -12,6 +12,6 @@ For it to run on windows rather than in your browser when you click "play", chec
 Most of the core of the program is in obj_ticktimer, obj_playertile, and obj_boss. 
 obj_ticktimer is the main engine that process queued movement/eating/attacking/etc every 0.6s. 
 obj_boss sets up the repeating sequence of lightnings, zebak attacks, and boulders. 
-obj_playertile for the most part handles most of the player info - hp, movement, etc. 
+obj_playertile for the most part handles the player info - hp, movement, etc. 
 
 Only a few things are placed in the "Room1" initially - for the most part stuff is generated as needed like projectiles and menu buttons. 
