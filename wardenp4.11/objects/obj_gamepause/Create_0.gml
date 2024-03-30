@@ -30,6 +30,14 @@ function gameStartPause() {
 	pauseReason = "gamestart";
 }
 
+function showPatchNotes() {
+	
+	
+	show_debug_message("implement this");
+	
+	
+}
+
 function gameStartOptions() {
 	removePausedInstances();
 	pauseReason = "gamestart";

@@ -1,7 +1,30 @@
 ===== NOTES:
 
-attack state - attack always interrupts true tile movement
 
+lightning numbers are fine. free tile analysis:
+
+total  - 58 - 100%
+0 diff - 9 - 16%
+1 diff - 28 - 48%
+2 diff - 14 - 24%
+3 diff - 7  - 12%
+if 0 diff, always a 1-3 diff as well 
+4 diff always comes with a 0-2
+
+
+attack state - attack always interrupts true tile movement
+zebak
+	tick# - action:
+	1 - mouth full, 
+	2 - mouth open & pot appear, 
+	3&4 - pot flying up, 
+	5 - pot break + projectile appear and starts flying, 
+	6&7 - projectile flying, 
+	8 - explosion on player (damage calculated vs prayer at the start of this tick), 
+	9 apply dmg.
+	A new pot/rock out of his mouth every 4 ticks regardless of path level
+	Higher path level (4&6) makes his pot/rock explode 1 tick faster and projectile faster 
+		(3 ticks from pot break to touching the player -> 2 ticks to player) 
 baba and boulders
 	- boulder hits on the 4th tick after the sound
 	- shadow appears on the 2nd tick
@@ -44,3 +67,15 @@ nice to haves/later development:
 	- new options screen popup from other option screen "invos" - then put path options and such here
 	- make a vid on the creation process? lol
 	
+	
+	
+Current prio:
+	- re-analyze zebak, side by side vid compare sim and actual
+	- same with lightning. esp regarding available spaces distance from player - always a round 1 free tile within 5 of you?
+		No boulder complaints so far
+	- simmed ping - perhaps make a new blank "floor" tile and put it on all the floor, move the 
+	movement code out of individual floor tiles and put it all on the new blank tile? Then can
+	apply ping here
+	- control click walking. Also a "controls" button at start screen/maybe options screen too
+	- add version number to options/start screen, and click to pop up patch notes
+	- 8 lightnings at once down to 5%? 

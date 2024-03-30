@@ -4,3 +4,4 @@ draw_set_color(c_white);
 
 instance_destroy(startButton);
 instance_destroy(optionsButton);
+instance_destroy(patchNotesButton);
