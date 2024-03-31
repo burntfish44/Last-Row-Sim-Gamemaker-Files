@@ -3,7 +3,7 @@
 
 if(zaptime == true) {
 	//show_debug_message(" LIGHTNING DAMAGE ACTIVE, PLAYER HIT!z!z!z");
-	obj_playertile.ateLightningDamage();
+	//obj_playertile.ateLightningDamage();
 }
 if(boulderDamageActive == true) {
 	//show_debug_message(" BOULDER DAMAGE IS ACTIVE, PLAYER HIT!!!!");

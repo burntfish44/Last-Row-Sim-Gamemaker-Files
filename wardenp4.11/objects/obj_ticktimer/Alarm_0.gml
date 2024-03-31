@@ -39,8 +39,75 @@ if (global.visual_metronome == true) {
 			instance_destroy(obj_tick2);
 			instance_destroy(obj_tick3);
 		}
-	} 
+	}
 }
+
+// process incoming lightning damage
+//compare array of lightning indexes to current index
+// if youre standing on one, take damage
+// extra check that if you just moved on, dont take damage?
+// update current player tile position
+currentPlayerTile = array_get_index(tileTruePositions_x,obj_playertile.x);
+// if there are queued lightnings (should p much always be the case
+//show_debug_message(" curent pos, and lightnings: " + string(currentPlayerTile) + ", " + string(lightningTimings) );
+if (array_length(lightningTimings) > 0) {
+	if (array_get(lightningTimings,currentPlayerTile) == 0) {
+		show_debug_message("!!! HIT ON TILE: " + string(currentPlayerTile));
+		obj_playertile.ateLightningDamage();
+	}
+	
+	//decrement each item in the array
+	lightningTimingsPlaceholder = [];
+	for (i = 0; i < array_length(lightningTimings); i++) {
+		currentLightningItem = array_get(lightningTimings,i);
+		if (currentLightningItem == -1) {
+			array_push(lightningTimingsPlaceholder,-1);
+		} else {
+			array_push(lightningTimingsPlaceholder,currentLightningItem - 1);
+		}
+	}
+	//show_debug_message("??? placeholder:"+string(lightningTimingsPlaceholder));
+	lightningTimings = lightningTimingsPlaceholder;
+}
+
+// DO IT AGANE, with array#2 
+if (array_length(lightningTimings2) > 0) {
+	if (array_get(lightningTimings2,currentPlayerTile) == 0) {
+		show_debug_message("!!! HIT ON TILE: " + string(currentPlayerTile));
+		obj_playertile.ateLightningDamage();
+	}
+	
+	//decrement each item in the array #2
+	if (array_length(lightningTimings2) > 0) {
+		lightningTimingsPlaceholder = [];
+		for (i = 0; i < array_length(lightningTimings2); i++) {
+			currentLightningItem = array_get(lightningTimings2,i);
+			if (currentLightningItem == -1) {
+				array_push(lightningTimingsPlaceholder,-1);
+			} else {
+				array_push(lightningTimingsPlaceholder,currentLightningItem - 1);
+			}
+		}
+		//show_debug_message("??? placeholder:"+string(lightningTimingsPlaceholder));
+		lightningTimings2 = lightningTimingsPlaceholder;
+	}
+}
+
+//show_debug_message("lightning finished processing, timings array 1: " + string(lightningTimings));
+//show_debug_message("lightning finished processing, timings array 2: " + string(lightningTimings2));
+// reset array if it's used up
+if (array_contains_ext(lightningTimings, [0,1,2,3,4]) == false) {
+	//show_debug_message("0-4 not included in " + string(lightningTimings));
+	lightningTimings = [];
+}
+if (array_contains_ext(lightningTimings2, [0,1,2,3,4]) == false) {
+	//show_debug_message("0-4 not included in " + string(lightningTimings2));
+	lightningTimings2 = [];
+}
+//show_debug_message("post cleanup 1/2: " + string(lightningTimings) + "/" + string(lightningTimings2));
+
+
+
 // process visual movement from last tick
 // generate attack if attacking and if attack is off cooldown
 if (attackstate == true) {

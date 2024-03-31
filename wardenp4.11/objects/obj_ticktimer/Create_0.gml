@@ -21,6 +21,8 @@ drank_brew = false;
 drank_restore = false;
 lastattacktick=-100;
 attackstarttick=0;
+lightningTimings = [];
+lightningTimings2 = [];
 
 // default some settings
 if (!variable_global_exists("attackspeed")) {
@@ -41,9 +43,58 @@ player_y = obj_playertile.y;
 // default destination to current
 pdestination_x = obj_playertile.x;
 pdestination_y = obj_playertile.y;
+tileTruePositions_x = [352,416,480,544,608,672,736,800,864];
 
 obj_bowfa_move_left.visible = true;
 obj_bowfa_move_right.visible = false;
+
+// recv the array of lightnings, 0 = no delay on strike, 1 = 1 tick delay etc, -1 = fully safe tile
+function queueUpLightningHits(delayValuesOfEachTile) {
+	//show_debug_message("NEW LIGHTNING ARRAY INC, current is len/val: " + string(array_length(lightningTimings)) + string(lightningTimings));
+	//show_debug_message("OG delay array: " + string(delayValuesOfEachTile));
+	//lightningTimings = []; //reset
+	
+	// default to array 1
+	var arrayDestination = "";
+	// else to array 2
+	if (array_length(lightningTimings) == 0) {
+		arrayDestination = "array1";
+	} else if (array_length(lightningTimings2) == 0) {
+		arrayDestination = "array2";
+	}
+	
+	for (i = 0; i < array_length(delayValuesOfEachTile); i++) {
+		var currentItem = array_get(delayValuesOfEachTile,i);
+		if (currentItem == -1) {
+			//if (array_contains(delayValuesOfEachTile,2) == true) {
+			//	show_debug_message("has a 2 in it!!!!");
+			//	array_push(lightningTimings2,-1);
+			//} 
+			if (arrayDestination == "array2") {
+				array_push(lightningTimings2,-1);
+			} else if (arrayDestination == "array1") {
+				array_push(lightningTimings, -1);
+			} else {
+				show_debug_message(" should not hit here");
+			}
+		} else {
+			//if (array_contains(delayValuesOfEachTile,2) == true) {
+			//	show_debug_message("has a 2 in it!!!!");
+			//	array_push(lightningTimings2,currentItem + 4);
+			//} else {
+			//	array_push(lightningTimings,currentItem + 4);
+			//}
+			if (arrayDestination == "array2") {
+				array_push(lightningTimings2,currentItem + 4);
+			} else if (arrayDestination == "array1") {
+				array_push(lightningTimings,currentItem + 4);
+			} else {
+				show_debug_message(" should not hit here");
+			}
+		}
+	}
+	//show_debug_message("new delay array 1/2: " + string(lightningTimings) + "/" + string(lightningTimings2));
+}
 
 // shoot a projectile if attacking and if attack is off cooldown
 function processAttack() {
