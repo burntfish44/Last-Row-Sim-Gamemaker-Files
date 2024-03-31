@@ -42,8 +42,10 @@ function updateExistsTimer() {
 }
 
 //show_debug_message("damage object drawn");
-//create then hide hitsplat base
-hitblank = instance_create_layer(x,y,"hitsplat",obj_hitsplat_player_blank);
-missblank = instance_create_layer(x,y,"hitsplat",obj_hitsplat_player_miss_blank);
+//create then hide hitsplat base - default at damage number 1
+hitblank = instance_create_layer(obj_bowfa_move_left.x - 6,obj_bowfa_move_left.y - 65,"hitsplat",obj_hitsplat_player_blank);
+missblank = instance_create_layer(obj_bowfa_move_left.x - 6,obj_bowfa_move_left.y - 65,"hitsplat",obj_hitsplat_player_miss_blank);
+hitblank.visible = false;
+missblank.visible = false;
 //obj_hitsplat_player_blank.visible = false;
 //obj_hitsplat_player_miss_blank.visible = false;

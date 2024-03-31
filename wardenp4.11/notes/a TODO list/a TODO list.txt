@@ -71,7 +71,6 @@ nice to haves/later development:
 	
 Current prio:
 	- re-analyze zebak, side by side vid compare sim and actual
-	- same with lightning. esp regarding available spaces distance from player - always a round 1 free tile within 5 of you?
 		No boulder complaints so far
 	- simmed ping - perhaps make a new blank "floor" tile and put it on all the floor, move the 
 	movement code out of individual floor tiles and put it all on the new blank tile? Then can

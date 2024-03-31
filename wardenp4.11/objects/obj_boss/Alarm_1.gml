@@ -106,7 +106,7 @@ if (global.lightning_on) {
 		array_insert(tileTargetsTicksBeforeHit,array_get(safer_tile_indexes,1),secondNonZeroValue);
 		//show_debug_message("$$$ delay array post insert 2: "  + string(tileTargetsTicksBeforeHit));
 	}
-	tileTargetsTicksBeforeHit = [0,0,1,1,2,2,-1,-1,-1]; //DEBUG
+	//tileTargetsTicksBeforeHit = [0,0,0,0,0,0,0,0,0]; //DEBUG
 	// send lightning array to tick processor
 	obj_ticktimer.queueUpLightningHits(tileTargetsTicksBeforeHit);
 	// do visaul for each set of lightning

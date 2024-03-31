@@ -8,7 +8,7 @@ if (event_data[? "event_type"] == "sprite event") // or you can check "sprite ev
     switch (event_data[? "message"])
     {
         case "zapframe0":
-            //show_debug_message("ZAP FRAME ON TILE 0 " + event_data[? "message"]);
+            show_debug_message("ZAP FRAME ON TILE 0 " + event_data[? "message"]);
 			//zaptime0 = true;
 			alarm_set(0,2);
         break;

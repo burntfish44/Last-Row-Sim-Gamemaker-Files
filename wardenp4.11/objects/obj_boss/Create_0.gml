@@ -43,17 +43,17 @@ hinst.applyNumber(350);
 
 //starting number of ligntnings - % chance
 //5 - 40%
-//6 - 36.4%
-//7 - 16.3%
-//8 - 7.3%
+//6 - 37.4%
+//7 - 17.3%
+//8 - 5.3%
 function getFirstLightningSetNumber(num) {
-	if (num >= 0.927) {
+	if (num >= 0.947) {
 		return 8;
-	} else if (num >= 0.764) {
+	} else if (num >= 0.774) {
 		return 7;
 	} else if (num >= 0.4) {
 		return 6;
-	} else {
+	} else { 
 		return 5;
 	}
 }
@@ -143,9 +143,6 @@ function determineASafeTile2(cantBeZero) {
 		}
 	}	
 }
-
-
-
 
 function addSafeIndexToSafeArray(diffToPlayer, leftOrRight) {
 	//show_debug_message("$$$ ADDING SAFE TILE, diff/LR: " + string(diffToPlayer) + "/" + string(leftOrRight));

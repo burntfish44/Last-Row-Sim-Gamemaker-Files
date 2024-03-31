@@ -31,11 +31,10 @@ function gameStartPause() {
 }
 
 function showPatchNotes() {
-	
-	
-	show_debug_message("implement this");
-	
-	
+	removePausedInstances();
+	instance_create_layer(0,0,"UI_pause_screen",obj_gamepause_patchnotes);
+	backButton = instance_create_layer(928,32,"UI_pause_screen_buttons",obj_back_button);
+	pauseReason = "patchnotes";
 }
 
 function gameStartOptions() {
@@ -101,6 +100,9 @@ function previousScreen() {
 	} else if (pauseReason == "gamestart") {
 		show_debug_message("go back to title screen");
 		gameStartPause();
+	} else if (pauseReason == "patchnotes") {
+		show_debug_message("go back to title screen");
+		gameStartPause();
 	}
 }
 
@@ -117,6 +119,9 @@ function removePausedInstances() {
 	} 
 	if (instance_exists(obj_gamepause_win)) {
 		instance_destroy(obj_gamepause_win);
+	} 
+	if (instance_exists(obj_gamepause_patchnotes)) {
+		instance_destroy(obj_gamepause_patchnotes);
 	} 
 	if (instance_exists(obj_restart_button)) {
 		instance_destroy(obj_restart_button);
