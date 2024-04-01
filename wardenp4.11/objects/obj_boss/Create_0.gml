@@ -239,8 +239,8 @@ function processBossDeath() {
 
 // start lightning cycle after a couple ticks
 alarm_set(1,72);
-// start baba cycle after a couple ticks
-alarm_set(5,72);
+// start baba cycle after a couple ticks + random 0-2 ticks
+alarm_set(5,36 + (round(random_range(.51,3.33)) * 36));
 // start zebak cycle after a couple ticks
 alarm_set(7,72);
 

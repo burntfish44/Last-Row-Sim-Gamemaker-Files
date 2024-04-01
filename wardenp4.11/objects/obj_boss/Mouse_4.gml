@@ -3,5 +3,4 @@
 
 instance_create_layer(mouse_x,mouse_y,"clicksprite",obj_redclick);
 
-obj_ticktimer.attackstate = true;
-obj_ticktimer.attackstarttick = obj_ticktimer.ticktimer;
+alarm_set(8,1 + global.ping); 

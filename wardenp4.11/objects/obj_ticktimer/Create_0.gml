@@ -9,6 +9,7 @@ ticktimer=1;
 visualtick=1;
 attackstate=false;
 movementstate=false;
+walking=false;
 lastplayeraction="move";
 player_direction = "left";
 incomingAttack = false;
@@ -36,6 +37,9 @@ if (!variable_global_exists("status_bars")) {
 }
 if (!variable_global_exists("endless_mode")) {
 	global.endless_mode = false;
+}
+if (!variable_global_exists("ping")) { // increments of 16.6ms to account for frame rate
+	global.ping = 2; // default 33ms
 }
 
 player_x = obj_playertile.x;

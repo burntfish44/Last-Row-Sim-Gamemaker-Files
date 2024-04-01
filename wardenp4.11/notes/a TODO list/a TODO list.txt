@@ -72,9 +72,10 @@ nice to haves/later development:
 Current prio:
 	- re-analyze zebak, side by side vid compare sim and actual
 		No boulder complaints so far
-	- simmed ping - perhaps make a new blank "floor" tile and put it on all the floor, move the 
-	movement code out of individual floor tiles and put it all on the new blank tile? Then can
-	apply ping here
-	- control click walking. Also a "controls" button at start screen/maybe options screen too
-	- add version number to options/start screen, and click to pop up patch notes
-	- 8 lightnings at once down to 5%? 
+	
+	
+1.0.2 patch notes
+	- added ctrl walk
+	- added ping slider
+	- baba spawns 0-2 ticks after lightning starts
+

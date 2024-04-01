@@ -81,7 +81,12 @@ zebakSoundOn.trackValue("zebaksound");
 zebakSoundOff = instance_create_layer(1020,480,"UI_pause_screen_buttons",obj_checkbox_no);
 zebakSoundOff.trackValue("zebaksound");
 
+// add ping slider
+pingSlider = instance_create_layer(952,672,"UI_pause_screen_buttons",obj_ping_slider);
 
+
+
+patchNotesButton = instance_create_layer(32,704,"UI_pause_screen_buttons",obj_patchnotes_button);
 
 //resetButton = instance_create_layer(960,352,"UI_pause_screen_buttons",obj_restart_button);
 //resumeButton = instance_create_layer(960,256,"UI_pause_screen_buttons",obj_resume_button);

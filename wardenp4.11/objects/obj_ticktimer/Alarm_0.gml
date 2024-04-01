@@ -52,7 +52,7 @@ currentPlayerTile = array_get_index(tileTruePositions_x,obj_playertile.x);
 //show_debug_message(" curent pos, and lightnings: " + string(currentPlayerTile) + ", " + string(lightningTimings) );
 if (array_length(lightningTimings) > 0) {
 	if (array_get(lightningTimings,currentPlayerTile) == 0) {
-		show_debug_message("!!! HIT ON TILE: " + string(currentPlayerTile));
+		//show_debug_message("!!! HIT ON TILE: " + string(currentPlayerTile));
 		obj_playertile.ateLightningDamage();
 	}
 	
@@ -73,7 +73,7 @@ if (array_length(lightningTimings) > 0) {
 // DO IT AGANE, with array#2 
 if (array_length(lightningTimings2) > 0) {
 	if (array_get(lightningTimings2,currentPlayerTile) == 0) {
-		show_debug_message("!!! HIT ON TILE: " + string(currentPlayerTile));
+		//show_debug_message("!!! HIT ON TILE: " + string(currentPlayerTile));
 		obj_playertile.ateLightningDamage();
 	}
 	
@@ -137,16 +137,24 @@ if (movementstate == true) {
 	}
 	//show_debug_message("movement state true, player going: " + string(player_direction));
 	// if distance is short, go to the new spot
-	if (point_distance(pdestination_x,480,player_x,480)<=128){
+	if (point_distance(pdestination_x,480,player_x,480)<=64){
 		obj_playertile.playermove(pdestination_x,480);
 		movementstate = false;
-	} else if (point_distance(pdestination_x,480,player_x,480)>128) {
+	} else if (point_distance(pdestination_x,480,player_x,480)>64) {
 		// otherwise keep moving
 		if (movementstate == true) {
-			if (pdestination_x > player_x) {
-				obj_playertile.playermove(player_x + 128, player_y);
+			if (walking == true) {
+				if (pdestination_x > player_x) {
+					obj_playertile.playermove(player_x + 64, player_y);
+				} else {
+					obj_playertile.playermove(player_x - 64, player_y);
+				}
 			} else {
-				obj_playertile.playermove(player_x - 128, player_y);
+				if (pdestination_x > player_x) {
+					obj_playertile.playermove(player_x + 128, player_y);
+				} else {
+					obj_playertile.playermove(player_x - 128, player_y);
+				}
 			}
 			attackstate = false;
 		}

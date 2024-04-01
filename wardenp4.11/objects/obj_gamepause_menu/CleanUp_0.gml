@@ -41,3 +41,8 @@ instance_destroy(babaSoundOn);
 instance_destroy(babaSoundOff);
 instance_destroy(zebakSoundOn);
 instance_destroy(zebakSoundOff);
+
+instance_destroy(pingSlider);
+
+
+instance_destroy(patchNotesButton);

@@ -14,6 +14,8 @@ lightningsEaten = obj_playertile.player_lightnings_ate;
 bouldersEaten = obj_playertile.player_boulders_ate;
 zebaksEaten = obj_playertile.player_zebaks_ate;
 damageDone = obj_playertile.damage_done;
+patchNotesFromTitle = false; // tells patchnotes back where to return to
+gameStartOptionsOnly = false;
 
 instance_deactivate_all(true);
 
@@ -24,17 +26,19 @@ function unPause() {
 }
 
 function gameStartPause() {
+	pauseReason = "gamestart";
+	gameStartOptionsOnly = true;
 	removePausedInstances();
 	global.first_pause = false;
 	instance_create_layer(0,0,"UI_pause_screen",obj_gamepause_title);
-	pauseReason = "gamestart";
 }
 
 function showPatchNotes() {
+	patchNotesFromTitle = instance_exists(obj_gamepause_title);
+	pauseReason = "patchnotes";
 	removePausedInstances();
 	instance_create_layer(0,0,"UI_pause_screen",obj_gamepause_patchnotes);
 	backButton = instance_create_layer(928,32,"UI_pause_screen_buttons",obj_back_button);
-	pauseReason = "patchnotes";
 }
 
 function gameStartOptions() {
@@ -47,6 +51,7 @@ function gameStartOptions() {
 
 // pause type
 function regularPause() {
+	gameStartOptionsOnly = false;
 	removePausedInstances();
 	if (playerHP == 0 || bossHP == 0) { 
 		optionsWhenDead();
@@ -100,9 +105,17 @@ function previousScreen() {
 	} else if (pauseReason == "gamestart") {
 		show_debug_message("go back to title screen");
 		gameStartPause();
-	} else if (pauseReason == "patchnotes") {
+	} else if (pauseReason == "patchnotes" && patchNotesFromTitle == true) {
 		show_debug_message("go back to title screen");
 		gameStartPause();
+	} else if (pauseReason == "patchnotes" && patchNotesFromTitle == false
+		&& gameStartOptionsOnly == false) {
+		show_debug_message("go back to regular options screen");
+		regularPause();
+	} else if (pauseReason == "patchnotes" && patchNotesFromTitle == false
+		&& gameStartOptionsOnly == true) {
+		show_debug_message("go back to gamestart options screen");
+		gameStartOptions();
 	}
 }
 

@@ -9,7 +9,7 @@ if (global.boulders_on) {
 		instance_create_layer(1088,192,"boss_sprite",obj_baba_animation);
 	}
 	if (global.baba_sound == true) {
-		show_debug_message("sound vol: " + string(audio_group_get_gain(audiogroup_default)));
+		//show_debug_message("sound vol: " + string(audio_group_get_gain(audiogroup_default)));
 		audio_play_sound(snd_baba_boulder,1,0);
 	}
 	//first tile
