@@ -37,6 +37,9 @@ if (!variable_global_exists("visual_metronome")) {
 if (!variable_global_exists("status_bars")) {
 	global.status_bars = true;
 }
+if (!variable_global_exists("hovered_tile")) {
+	global.hovered_tile = true;
+}
 if (!variable_global_exists("endless_mode")) {
 	global.endless_mode = false;
 }

@@ -18,6 +18,8 @@ babaSoundOn.visible = false;
 babaSoundOff.visible = false;
 zebakSoundOn.visible = false;
 zebakSoundOff.visible = false;
+hoveredTileOn.visible = false;
+hoveredTileOff.visible = false;
 
 // update which options should be checked by showing visible/non
 if(global.lightning_on == true) {
@@ -94,7 +96,13 @@ if(global.status_bars == true) {
 	statusBarsOn.visible = false;
 	statusBarsOff.visible = true;
 }
-
+if(global.hovered_tile == true) {
+	hoveredTileOn.visible = true;
+	hoveredTileOff.visible = false;
+} else {
+	hoveredTileOn.visible = false;
+	hoveredTileOff.visible = true;
+}
 if(global.baba_sound == true) {
 	babaSoundOn.visible = true;
 	babaSoundOff.visible = false;

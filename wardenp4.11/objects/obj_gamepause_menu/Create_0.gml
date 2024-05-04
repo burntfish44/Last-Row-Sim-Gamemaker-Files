@@ -16,9 +16,6 @@ playerHpChanged = false;
 
 //obj_gamepause.updateGlobals();
 
-//show_debug_message(" ZEBAK IS ON!!!!?!?!?! og/here: " + string(obj_boss.zebak_on)+"/"+string(zebakOn));
-
-
 // re-add cog, can be used to unpause
 //instance_create_layer(1216,0,"UI_pause_screen_buttons",obj_game_settings_button);
 
@@ -72,6 +69,10 @@ statusBarsOn.trackValue("statusbars");
 statusBarsOff = instance_create_layer(544,626,"UI_pause_screen_buttons",obj_checkbox_no);
 statusBarsOff.trackValue("statusbars");
 
+hoveredTileOn = instance_create_layer(544,690,"UI_pause_screen_buttons",obj_checkbox_yes);
+hoveredTileOn.trackValue("hoveredtile");
+hoveredTileOff = instance_create_layer(544,690,"UI_pause_screen_buttons",obj_checkbox_no);
+hoveredTileOff.trackValue("hoveredtile");
 
 
 // add sound options

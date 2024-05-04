@@ -35,6 +35,8 @@ instance_destroy(visualMetronomeOn);
 instance_destroy(visualMetronomeOff);
 instance_destroy(statusBarsOn);
 instance_destroy(statusBarsOff);
+instance_destroy(hoveredTileOn);
+instance_destroy(hoveredTileOff);
 
 instance_destroy(volumeSlider);
 

@@ -17,6 +17,8 @@ if (visible == true) {
 		global.visual_metronome = false;
 	} else if (value == "statusbars") {
 		global.status_bars = false;	
+	} else if (value == "hoveredtile") {
+		global.hovered_tile = false;
 	} else if (value == "babasound") {
 		global.baba_sound = false;	
 	} else if (value == "zebaksound") {
