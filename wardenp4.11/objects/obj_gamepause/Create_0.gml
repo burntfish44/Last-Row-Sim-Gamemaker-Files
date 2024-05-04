@@ -57,7 +57,7 @@ function regularPause() {
 		optionsWhenDead();
 		return;
 	}
-	show_debug_message("actual regular pause, should get here from death: " + string(playerHP) + "/" + string(bossHP)); 
+	//show_debug_message("actual regular pause, should get here from death: " + string(playerHP) + "/" + string(bossHP)); 
 	pauseReason = "regular";
 	instance_create_layer(0,0,"UI_pause_screen",obj_gamepause_menu);
 	resetButton = instance_create_layer(736,32,"UI_pause_screen_buttons",obj_restart_button);
@@ -94,7 +94,7 @@ function bossDiedPause() {
 }
 
 function previousScreen() {
-	show_debug_message("go back!!! to:" + string(pauseReason));
+	//show_debug_message("go back!!! to:" + string(pauseReason));
 	//removePausedInstances();
 	if (pauseReason == "playerdead") {
 		show_debug_message("go back to player dead");

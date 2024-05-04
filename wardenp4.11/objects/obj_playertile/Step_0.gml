@@ -2,7 +2,7 @@
 // You can write your code in this editor
 if(player_health <= 0) {
 	//player dies
-	show_debug_message("***you are dead!!");
+	//show_debug_message("***you are dead!!");
 	player_health = 0; // remove overkill
 	//pause if it's not already
 	processDeath();

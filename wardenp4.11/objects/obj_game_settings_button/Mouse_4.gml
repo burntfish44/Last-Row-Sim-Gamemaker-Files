@@ -1,5 +1,6 @@
 /// @description Insert description here
 // You can write your code in this editor
+show_debug_message("settings clicked!!!!!!!!!!!!!");
 
 window_set_cursor(cursor);
 //pause if it's not already
