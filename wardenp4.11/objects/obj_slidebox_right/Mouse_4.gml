@@ -2,6 +2,9 @@
 // You can write your code in this editor
 
 if (visible == true) {
-	//obj_gamepause_menu.playerAttackSpeed = 4;
-	global.attackspeed = 4;
+	if (value == "wepspeed") {
+		global.attackspeed = 4;
+	} else if (value == "zeblvl") {
+		global.zebak_level = 0;
+	}
 }

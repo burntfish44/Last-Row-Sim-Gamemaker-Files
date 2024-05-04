@@ -51,9 +51,10 @@ currentPlayerTile = array_get_index(tileTruePositions_x,obj_playertile.x);
 // if there are queued lightnings (should p much always be the case
 //show_debug_message(" curent pos, and lightnings: " + string(currentPlayerTile) + ", " + string(lightningTimings) );
 if (array_length(lightningTimings) > 0) {
-	if (array_get(lightningTimings,currentPlayerTile) == 0) {
+	if (array_get(lightningTimings,currentPlayerTile) == 0 && lightningDmgTakenFromSet == false) {
 		//show_debug_message("!!! HIT ON TILE: " + string(currentPlayerTile));
 		obj_playertile.ateLightningDamage();
+		lightningDmgTakenFromSet = true;
 	}
 	
 	//decrement each item in the array
@@ -72,9 +73,10 @@ if (array_length(lightningTimings) > 0) {
 
 // DO IT AGANE, with array#2 
 if (array_length(lightningTimings2) > 0) {
-	if (array_get(lightningTimings2,currentPlayerTile) == 0) {
+	if (array_get(lightningTimings2,currentPlayerTile) == 0 && lightningDmgTakenFromSet2 == false) {
 		//show_debug_message("!!! HIT ON TILE: " + string(currentPlayerTile));
 		obj_playertile.ateLightningDamage();
+		lightningDmgTakenFromSet2 = true;
 	}
 	
 	//decrement each item in the array #2
@@ -112,12 +114,16 @@ if (array_contains_ext(lightningTimings2, [0,1,2,3,4]) == false) {
 // generate attack if attacking and if attack is off cooldown
 if (attackstate == true) {
 	movementstate = false;
+	// check if the attack can actually go through
 	if (ticktimer - lastattacktick >= global.attackspeed) {
 		if (global.attackspeed == 4) {
-			instance_create_layer(obj_playertile.x+16,obj_playertile.y-32,"projectile",obj_rangeball);
+			audio_play_sound(snd_bowfa_shoot,1,0);
+			//instance_create_layer(obj_playertile.x+16,obj_playertile.y-32,"projectile",obj_rangeball);
 		} else if (global.attackspeed == 5) {
-			instance_create_layer(obj_playertile.x+16,obj_playertile.y-32,"projectile",obj_mageball);
+			audio_play_sound(snd_shadow_shoot,1,0);
+			//instance_create_layer(obj_playertile.x+16,obj_playertile.y-32,"projectile",obj_mageball);
 		}
+		alarm_set(1,18);
 		lastattacktick = ticktimer;
 	}
 }

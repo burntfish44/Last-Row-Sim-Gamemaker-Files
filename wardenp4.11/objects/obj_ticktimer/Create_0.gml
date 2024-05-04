@@ -24,6 +24,8 @@ lastattacktick=-100;
 attackstarttick=0;
 lightningTimings = [];
 lightningTimings2 = [];
+lightningDmgTakenFromSet = false;
+lightningDmgTakenFromSet2 = false;
 
 // default some settings
 if (!variable_global_exists("attackspeed")) {
@@ -53,18 +55,16 @@ obj_bowfa_move_left.visible = true;
 obj_bowfa_move_right.visible = false;
 
 // recv the array of lightnings, 0 = no delay on strike, 1 = 1 tick delay etc, -1 = fully safe tile
-function queueUpLightningHits(delayValuesOfEachTile) {
-	//show_debug_message("NEW LIGHTNING ARRAY INC, current is len/val: " + string(array_length(lightningTimings)) + string(lightningTimings));
-	//show_debug_message("OG delay array: " + string(delayValuesOfEachTile));
-	//lightningTimings = []; //reset
-	
+function queueUpLightningHits(delayValuesOfEachTile) {	
 	// default to array 1
 	var arrayDestination = "";
 	// else to array 2
 	if (array_length(lightningTimings) == 0) {
 		arrayDestination = "array1";
+		lightningDmgTakenFromSet = false;
 	} else if (array_length(lightningTimings2) == 0) {
 		arrayDestination = "array2";
+		lightningDmgTakenFromSet2 = false;
 	}
 	
 	for (i = 0; i < array_length(delayValuesOfEachTile); i++) {
@@ -75,7 +75,7 @@ function queueUpLightningHits(delayValuesOfEachTile) {
 			//	array_push(lightningTimings2,-1);
 			//} 
 			if (arrayDestination == "array2") {
-				array_push(lightningTimings2,-1);
+				array_push(lightningTimings2, -1);
 			} else if (arrayDestination == "array1") {
 				array_push(lightningTimings, -1);
 			} else {

@@ -70,6 +70,8 @@ nice to haves/later development:
 	
 	
 Current prio:
+	- lightning can only do one damage per cycle it seems!!!!!
+	
 	- re-analyze zebak, side by side vid compare sim and actual
 		No boulder complaints so far
 	

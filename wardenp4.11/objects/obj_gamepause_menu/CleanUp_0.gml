@@ -9,9 +9,10 @@ instance_destroy(babaOptionOn);
 instance_destroy(babaOptionOff);
 instance_destroy(zebakOptionOn);
 instance_destroy(zebakOptionOff);
+instance_destroy(zebLvlSliderLeft);
+instance_destroy(zebLvlSliderRight);
 instance_destroy(endlessModeOn);
 instance_destroy(endlessModeOff);
-
 instance_destroy(highHpOptionOn);
 instance_destroy(highHpOptionOff);
 instance_destroy(highPrayerOptionOn);

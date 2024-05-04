@@ -11,6 +11,9 @@ if (!variable_global_exists("boulders_on")) {
 if (!variable_global_exists("zebak_on")) {
 	global.zebak_on = true;
 }
+if (!variable_global_exists("zebak_level")) {
+	global.zebak_level = 0;
+}
 if (!variable_global_exists("baba_sound")) {
 	global.baba_sound = true;
 }

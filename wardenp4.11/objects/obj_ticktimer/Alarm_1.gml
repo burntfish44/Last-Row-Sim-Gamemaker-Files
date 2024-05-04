@@ -1,5 +1,8 @@
-/// @description Insert description here
+/// @description shoot projectile
 // You can write your code in this editor
-//global.globalTest = "globaltest changed";
 
-//show_debug_message("globaltest changed, to : " + string(global.globalTest));
+if (global.attackspeed == 4) {
+	instance_create_layer(obj_playertile.x+16,obj_playertile.y-32,"projectile",obj_rangeball);
+} else if (global.attackspeed == 5) {
+	instance_create_layer(obj_playertile.x+16,obj_playertile.y-32,"projectile",obj_mageball);
+}

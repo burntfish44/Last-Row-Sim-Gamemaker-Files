@@ -8,6 +8,8 @@ babaOptionOn.visible = false;
 babaOptionOff.visible = false;
 zebakOptionOn.visible = false;
 zebakOptionOff.visible = false;
+zebLvlSliderLeft.visible = false;
+zebLvlSliderRight.visible = false;
 highHpOptionOn.visible = false;
 highHpOptionOff.visible = false;
 wepSpeedSliderLeft.visible = false;
@@ -38,6 +40,13 @@ if(global.zebak_on == true) {
 } else {
 	zebakOptionOn.visible = false;
 	zebakOptionOff.visible = true;
+}
+if(global.zebak_level == 0) {
+	zebLvlSliderLeft.visible = true;
+	zebLvlSliderRight.visible = false;
+} else {
+	zebLvlSliderLeft.visible = false;
+	zebLvlSliderRight.visible = true;
 }
 if(global.endless_mode == true) {
 	endlessModeOn.visible = true;

@@ -36,9 +36,13 @@ zebakOptionOn = instance_create_layer(64,480,"UI_pause_screen_buttons",obj_check
 zebakOptionOn.trackValue("zebak");
 zebakOptionOff = instance_create_layer(64,480,"UI_pause_screen_buttons",obj_checkbox_no);
 zebakOptionOff.trackValue("zebak");
-endlessModeOn = instance_create_layer(64,544,"UI_pause_screen_buttons",obj_checkbox_yes);
+zebLvlSliderLeft = instance_create_layer(64,535,"UI_pause_screen_buttons",obj_slidebox_left);
+zebLvlSliderLeft.trackValue("zeblvl");
+zebLvlSliderRight = instance_create_layer(64,535,"UI_pause_screen_buttons",obj_slidebox_right);
+zebLvlSliderRight.trackValue("zeblvl");
+endlessModeOn = instance_create_layer(64,624,"UI_pause_screen_buttons",obj_checkbox_yes);
 endlessModeOn.trackValue("endless");
-endlessModeOff = instance_create_layer(64,544,"UI_pause_screen_buttons",obj_checkbox_no);
+endlessModeOff = instance_create_layer(64,624,"UI_pause_screen_buttons",obj_checkbox_no);
 endlessModeOff.trackValue("endless");
 
 // add player options
@@ -54,7 +58,9 @@ highHpOptionOff.trackValue("playerhp");
 highPrayerOptionOn = instance_create_layer(544,416,"UI_pause_screen_buttons",obj_checkbox_yes_perma);
 
 wepSpeedSliderLeft = instance_create_layer(544,480,"UI_pause_screen_buttons",obj_slidebox_left);
+wepSpeedSliderLeft.trackValue("wepspeed");
 wepSpeedSliderRight = instance_create_layer(544,480,"UI_pause_screen_buttons",obj_slidebox_right);
+wepSpeedSliderRight.trackValue("wepspeed");
 
 visualMetronomeOn = instance_create_layer(544,562,"UI_pause_screen_buttons",obj_checkbox_yes);
 visualMetronomeOn.trackValue("vmetronome");
